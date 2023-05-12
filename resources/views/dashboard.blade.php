@@ -28,12 +28,12 @@
                                 </li>
                                 <li>
                                     <a href="#" class="block md:px-4 transition hover:text-yellow-700">
-    <span>Wishlist</span>
+    <span>Favoritos</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" class="block md:px-4 transition hover:text-yellow-700">
-    <span>Cart</span>
+    <span>Carrito</span>
                                     </a>
                                 </li>
                             </ul>
