@@ -47,13 +47,25 @@
                                     </span>
                                 </button>
                             </a>
-                            <a href="{{ route('login') }}">
-                                <button type="button" title="Start buying" class="w-full py-3 px-6 text-center rounded-full transition bg-yellow-300 hover:bg-yellow-100 active:bg-yellow-400 focus:bg-yellow-300 sm:w-max">
-                                    <span class="block text-yellow-900 font-semibold text-sm">
-                                        Ingresar
-                                    </span>
-                                </button>
-                            </a>
+                            @if (auth()->user())
+                                <a href="{{ route('profile.show') }}">
+                                    <button type="button" title="Start buying" class="w-full py-3 px-6 text-center rounded-full transition bg-yellow-300 hover:bg-yellow-100 active:bg-yellow-400 focus:bg-yellow-300 sm:w-max">
+                                        <span class="block text-yellow-900 font-semibold text-sm">
+                                            Mi Perfil
+                                        </span>
+                                    </button>
+                                </a>
+                            @else
+                                <a href="{{ route('login') }}">
+                                    <button type="button" title="Start buying" class="w-full py-3 px-6 text-center rounded-full transition bg-yellow-300 hover:bg-yellow-100 active:bg-yellow-400 focus:bg-yellow-300 sm:w-max">
+                                        <span class="block text-yellow-900 font-semibold text-sm">
+                                            Ingresar
+                                        </span>
+                                    </button>
+                                </a>
+                                
+                            @endif
+                           
                         </div>
                     </div>
                 </div>
