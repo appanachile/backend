@@ -39,14 +39,33 @@
                             </ul>
                         </div>
     
-                        <div class="w-full space-y-2 border-yellow-200 lg:space-y-0 md:w-max lg:border-l">
-                            <a href="{{ route('register') }}">
-                                <button type="button" title="Start buying" class="w-full py-3 px-6 text-center rounded-full transition active:bg-yellow-200 focus:bg-yellow-100 sm:w-max">
-                                    <span class="block text-yellow-800 font-semibold text-sm">
-                                    Registro
-                                    </span>
-                                </button>
-                            </a>
+                        <div class="w-full flex space-y-2 border-yellow-200 lg:space-y-0 md:w-max lg:border-l">
+                            
+                            @if (auth()->user())
+                                <form method="POST" action="{{ route('logout') }}" x-data>
+                                    @csrf
+                
+                                   
+                                    <a href="{{ route('logout') }}">
+                                        <button  @click.prevent="$root.submit();" type="button" title="Start buying" class="w-full py-3 px-6 text-center rounded-full transition active:bg-yellow-200 focus:bg-yellow-100 sm:w-max">
+                                            <span class="block text-yellow-800 font-semibold text-sm">
+                                            Salir
+                                            </span>
+                                        </button>
+                                    </a>
+                                </form>
+                               
+                            @else
+                                <a href="{{ route('register') }}">
+                                    <button type="button" title="Start buying" class="w-full py-3 px-6 text-center rounded-full transition active:bg-yellow-200 focus:bg-yellow-100 sm:w-max">
+                                        <span class="block text-yellow-800 font-semibold text-sm">
+                                        Registro
+                                        </span>
+                                    </button>
+                                </a>
+                                
+                            @endif
+                           
                             @if (auth()->user())
                                 <a href="{{ route('profile.show') }}">
                                     <button type="button" title="Start buying" class="w-full py-3 px-6 text-center rounded-full transition bg-yellow-300 hover:bg-yellow-100 active:bg-yellow-400 focus:bg-yellow-300 sm:w-max">
