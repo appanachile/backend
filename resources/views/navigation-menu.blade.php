@@ -175,9 +175,19 @@
             @endif
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
-                <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                    {{ __('Mis Datos') }}
-                </x-responsive-nav-link>
+                @if (auth()->user())
+                    <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
+                        {{ __('Mis Datos') }}
+                    </x-responsive-nav-link>
+                @else
+                    <x-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('profile.show')">
+                        {{ __('Ingresar') }}
+                    </x-responsive-nav-link>
+                    <x-responsive-nav-link href="{{ route('register') }}" :active="request()->routeIs('profile.show')">
+                        {{ __('Registro') }}
+                    </x-responsive-nav-link>
+                @endif
+                
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                     <x-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
@@ -186,15 +196,16 @@
                 @endif
 
                 <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}" x-data>
-                    @csrf
+                @if (auth()->user())
+                    <form method="POST" action="{{ route('logout') }}" x-data>
+                        @csrf
 
-                    <x-responsive-nav-link href="{{ route('logout') }}"
-                                   @click.prevent="$root.submit();">
-                        {{ __('Salir') }}
-                    </x-responsive-nav-link>
-                </form>
-
+                        <x-responsive-nav-link href="{{ route('logout') }}"
+                                    @click.prevent="$root.submit();">
+                            {{ __('Salir') }}
+                        </x-responsive-nav-link>
+                    </form>
+                @endif
                 <!-- Team Management -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="border-t border-gray-200"></div>
