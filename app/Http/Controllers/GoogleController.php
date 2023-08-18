@@ -21,7 +21,7 @@ class GoogleController extends Controller
 
         if($userExists){
             Auth::login($userExists);
-            return redirect()->route('home');
+            return redirect()->route('dashboard');
         }else{
             $userNew=User::create([
                 'name'=>$user->name,
@@ -31,7 +31,7 @@ class GoogleController extends Controller
                 'external_auth'=>'google'
             ]);
             Auth::login($userNew);
-            return redirect()->route('home');
+            return redirect()->route('dashboard');
         }
         // $user->token
     }
