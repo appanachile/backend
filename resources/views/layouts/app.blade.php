@@ -23,7 +23,7 @@
 
         <div class="min-h-screen bg-gray-100">
           
-            <div class="sm:hidden"> 
+            <div class="sm:hidden">
                 @livewire('navigation-menu')
             </div>
             <!-- Page Heading -->
