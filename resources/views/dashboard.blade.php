@@ -24,7 +24,7 @@
                                 <ul class="space-y-6 tracking-wide font-medium text-sm md:flex md:space-y-0">
                                     <li>
                                         <a href="https://admin.appana.cl/register" class="block md:px-4 transition hover:text-yellow-700">
-                                            <span>Tengo un Restaurant</span>
+                                            <span>Registra tu Negocio</span>
                                         </a>
                                     </li>
                                     <li>
