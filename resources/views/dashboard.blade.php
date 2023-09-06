@@ -27,12 +27,12 @@
                                             <span>Registra tu Negocio</span>
                                         </a>
                                     </li>
-                                    <li>
+                                    <li class="hidden">
                                         <a href="#" class="block md:px-4 transition hover:text-yellow-700">
                             <span>Favoritos</span>
                                         </a>
                                     </li>
-                                    <li>
+                                    <li class="hidden">
                                         <a href="#" class="block md:px-4 transition hover:text-yellow-700">
                                                     <span>Carrito</span>
                                         </a>
